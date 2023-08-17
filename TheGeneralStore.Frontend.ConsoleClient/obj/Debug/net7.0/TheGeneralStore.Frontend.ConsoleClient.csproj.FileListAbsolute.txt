@@ -1,0 +1,15 @@
+C:\src\SKOLE\H3\TheGeneralStore\TheGeneralStore.Frontend.ConsoleClient\bin\Debug\net7.0\TheGeneralStore.Frontend.ConsoleClient.exe
+C:\src\SKOLE\H3\TheGeneralStore\TheGeneralStore.Frontend.ConsoleClient\bin\Debug\net7.0\TheGeneralStore.Frontend.ConsoleClient.deps.json
+C:\src\SKOLE\H3\TheGeneralStore\TheGeneralStore.Frontend.ConsoleClient\bin\Debug\net7.0\TheGeneralStore.Frontend.ConsoleClient.runtimeconfig.json
+C:\src\SKOLE\H3\TheGeneralStore\TheGeneralStore.Frontend.ConsoleClient\bin\Debug\net7.0\TheGeneralStore.Frontend.ConsoleClient.dll
+C:\src\SKOLE\H3\TheGeneralStore\TheGeneralStore.Frontend.ConsoleClient\bin\Debug\net7.0\TheGeneralStore.Frontend.ConsoleClient.pdb
+C:\src\SKOLE\H3\TheGeneralStore\TheGeneralStore.Frontend.ConsoleClient\obj\Debug\net7.0\TheGeneralStore.Frontend.ConsoleClient.csproj.AssemblyReference.cache
+C:\src\SKOLE\H3\TheGeneralStore\TheGeneralStore.Frontend.ConsoleClient\obj\Debug\net7.0\TheGeneralStore.Frontend.ConsoleClient.GeneratedMSBuildEditorConfig.editorconfig
+C:\src\SKOLE\H3\TheGeneralStore\TheGeneralStore.Frontend.ConsoleClient\obj\Debug\net7.0\TheGeneralStore.Frontend.ConsoleClient.AssemblyInfoInputs.cache
+C:\src\SKOLE\H3\TheGeneralStore\TheGeneralStore.Frontend.ConsoleClient\obj\Debug\net7.0\TheGeneralStore.Frontend.ConsoleClient.AssemblyInfo.cs
+C:\src\SKOLE\H3\TheGeneralStore\TheGeneralStore.Frontend.ConsoleClient\obj\Debug\net7.0\TheGeneralStore.Frontend.ConsoleClient.csproj.CoreCompileInputs.cache
+C:\src\SKOLE\H3\TheGeneralStore\TheGeneralStore.Frontend.ConsoleClient\obj\Debug\net7.0\TheGeneralStore.Frontend.ConsoleClient.dll
+C:\src\SKOLE\H3\TheGeneralStore\TheGeneralStore.Frontend.ConsoleClient\obj\Debug\net7.0\refint\TheGeneralStore.Frontend.ConsoleClient.dll
+C:\src\SKOLE\H3\TheGeneralStore\TheGeneralStore.Frontend.ConsoleClient\obj\Debug\net7.0\TheGeneralStore.Frontend.ConsoleClient.pdb
+C:\src\SKOLE\H3\TheGeneralStore\TheGeneralStore.Frontend.ConsoleClient\obj\Debug\net7.0\TheGeneralStore.Frontend.ConsoleClient.genruntimeconfig.cache
+C:\src\SKOLE\H3\TheGeneralStore\TheGeneralStore.Frontend.ConsoleClient\obj\Debug\net7.0\ref\TheGeneralStore.Frontend.ConsoleClient.dll

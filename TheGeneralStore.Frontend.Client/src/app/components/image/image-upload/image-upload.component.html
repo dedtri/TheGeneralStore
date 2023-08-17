@@ -1,0 +1,35 @@
+    <div class="container mt-5 text-center" style="width: 70%;">
+    
+      <h3>Upload Image</h3>
+    
+    <div style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
+    
+      <!-- 
+    IMAGE PREVIEW NOT REALLY A THING FOR MULTIPLE UPLOADS THOUGH
+      <div class="mt-5 text-center" >
+        <img [src]="previewImage" height="150">
+      </div> -->
+    
+        <div class="mb-3 mx-2">
+          <form [formGroup]="frm" (ngSubmit)="onSubmit()">
+          <label class="form-label">Image Source: </label>
+          <input type="file" class="form-control" formControlName="imageFile" (change)="onFileSelected($event)" accept="image/*">
+          <button type="submit" class="btn btn-primary mt-2" [disabled]="frm.invalid">Upload</button>
+        </form>
+        </div>
+      </div>
+    
+      <div *ngIf="images.length > 0" class="mt-4">
+        <h3 style="font-weight: bold;">List of Uploads: </h3>
+        <p *ngFor="let image of images" >
+        {{image.name}}
+      </p>
+      </div>
+    
+      <div class="mb-3 mt-3 form-check" *ngIf="statusString">
+        {{ statusString }}
+      </div>
+      
+    </div>
+    
+    

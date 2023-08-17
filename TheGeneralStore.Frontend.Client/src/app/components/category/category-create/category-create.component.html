@@ -1,0 +1,9 @@
+<div class="container d-flex justify-content-center flex-column">
+    <form class="mt-5" style="margin: auto; width: 40%;">
+        <div class="mb-3">
+          <label for="name" class="form-label">Category Name</label>
+          <input type="text" class="form-control" id="projectName" name="name" [(ngModel)]="createCategory.name">
+        </div>
+      </form>
+      <button class="btn btn-success" style="width: 40%; margin: auto;" (click)="create()">Create</button>
+    </div>

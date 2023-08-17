@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "bgSiToNOJ5mMSyvTHoQtF2JnCvi4psiZt18OoSmBgRY=",
+  "Source": "TheGeneralStore.Backend.WebAPI",
+  "BasePath": "_content/TheGeneralStore.Backend.WebAPI",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
