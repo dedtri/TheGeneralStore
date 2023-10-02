@@ -16,7 +16,6 @@ export class ImageUploadComponent implements OnChanges {
   frm: FormGroup | any;
   imageFile: File | any;
   statusString: string = "";
-  // previewImage = "";
   imageBaseUrl: string = this.imageService.imageUrl;
 
   query: any = {
@@ -92,16 +91,12 @@ export class ImageUploadComponent implements OnChanges {
 
       this.images.push(this.imageFile);
 
-      console.log(this.images);
-
       this.imageService.add(frmData).subscribe({
         next: (res) => {
-          this.images = res;
-          this.initialize();
+          this.statusString = res.message;
         },
         error: (err) => {
-          this.statusString = "Error on server side..";
-          console.log(err);
+          this.statusString = err.message;
         }
       })
     }

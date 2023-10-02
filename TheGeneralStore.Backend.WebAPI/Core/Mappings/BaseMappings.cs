@@ -8,7 +8,7 @@ namespace TheGeneralStore.Backend.WebAPI.Core.Mappings
     {
         public BaseMappings()
         {
-            // API to Resource
+            // Mapping DataModel to Resource
             CreateMap(typeof(BaseQueryResult<>), typeof(BaseQueryResultResource<>));
         }
     }

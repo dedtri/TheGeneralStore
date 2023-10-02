@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\src\\SKOLE\\H3\\TheGeneralStore\\TheGeneralStore.Backend.Test\\TheGeneralStore.Backend.Test.csproj": {}
+    "C:\\Users\\MartinNguyen\\source\\repos\\TheGeneralStore\\TheGeneralStore.Backend.Test\\TheGeneralStore.Backend.Test.csproj": {}
   },
   "projects": {
-    "C:\\src\\SKOLE\\H3\\TheGeneralStore\\TheGeneralStore.Backend.Database\\TheGeneralStore.Backend.Database.csproj": {
+    "C:\\Users\\MartinNguyen\\source\\repos\\TheGeneralStore\\TheGeneralStore.Backend.Database\\TheGeneralStore.Backend.Database.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\src\\SKOLE\\H3\\TheGeneralStore\\TheGeneralStore.Backend.Database\\TheGeneralStore.Backend.Database.csproj",
+        "projectUniqueName": "C:\\Users\\MartinNguyen\\source\\repos\\TheGeneralStore\\TheGeneralStore.Backend.Database\\TheGeneralStore.Backend.Database.csproj",
         "projectName": "TheGeneralStore.Backend.Database",
-        "projectPath": "C:\\src\\SKOLE\\H3\\TheGeneralStore\\TheGeneralStore.Backend.Database\\TheGeneralStore.Backend.Database.csproj",
+        "projectPath": "C:\\Users\\MartinNguyen\\source\\repos\\TheGeneralStore\\TheGeneralStore.Backend.Database\\TheGeneralStore.Backend.Database.csproj",
         "packagesPath": "C:\\Users\\MartinNguyen\\.nuget\\packages\\",
-        "outputPath": "C:\\src\\SKOLE\\H3\\TheGeneralStore\\TheGeneralStore.Backend.Database\\obj\\",
+        "outputPath": "C:\\Users\\MartinNguyen\\Source\\Repos\\TheGeneralStore\\TheGeneralStore.Backend.Database\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\DevExpress 22.2\\Components\\Offline Packages",
@@ -101,14 +101,14 @@
         }
       }
     },
-    "C:\\src\\SKOLE\\H3\\TheGeneralStore\\TheGeneralStore.Backend.Test\\TheGeneralStore.Backend.Test.csproj": {
+    "C:\\Users\\MartinNguyen\\source\\repos\\TheGeneralStore\\TheGeneralStore.Backend.Test\\TheGeneralStore.Backend.Test.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\src\\SKOLE\\H3\\TheGeneralStore\\TheGeneralStore.Backend.Test\\TheGeneralStore.Backend.Test.csproj",
+        "projectUniqueName": "C:\\Users\\MartinNguyen\\source\\repos\\TheGeneralStore\\TheGeneralStore.Backend.Test\\TheGeneralStore.Backend.Test.csproj",
         "projectName": "TheGeneralStore.Backend.Test",
-        "projectPath": "C:\\src\\SKOLE\\H3\\TheGeneralStore\\TheGeneralStore.Backend.Test\\TheGeneralStore.Backend.Test.csproj",
+        "projectPath": "C:\\Users\\MartinNguyen\\source\\repos\\TheGeneralStore\\TheGeneralStore.Backend.Test\\TheGeneralStore.Backend.Test.csproj",
         "packagesPath": "C:\\Users\\MartinNguyen\\.nuget\\packages\\",
-        "outputPath": "C:\\src\\SKOLE\\H3\\TheGeneralStore\\TheGeneralStore.Backend.Test\\obj\\",
+        "outputPath": "C:\\Users\\MartinNguyen\\Source\\Repos\\TheGeneralStore\\TheGeneralStore.Backend.Test\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\DevExpress 22.2\\Components\\Offline Packages",
@@ -133,11 +133,11 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "C:\\src\\SKOLE\\H3\\TheGeneralStore\\TheGeneralStore.Backend.Database\\TheGeneralStore.Backend.Database.csproj": {
-                "projectPath": "C:\\src\\SKOLE\\H3\\TheGeneralStore\\TheGeneralStore.Backend.Database\\TheGeneralStore.Backend.Database.csproj"
+              "C:\\Users\\MartinNguyen\\source\\repos\\TheGeneralStore\\TheGeneralStore.Backend.Database\\TheGeneralStore.Backend.Database.csproj": {
+                "projectPath": "C:\\Users\\MartinNguyen\\source\\repos\\TheGeneralStore\\TheGeneralStore.Backend.Database\\TheGeneralStore.Backend.Database.csproj"
               },
-              "C:\\src\\SKOLE\\H3\\TheGeneralStore\\TheGeneralStore.Frontend.ConsoleClient\\TheGeneralStore.Frontend.ConsoleClient.csproj": {
-                "projectPath": "C:\\src\\SKOLE\\H3\\TheGeneralStore\\TheGeneralStore.Frontend.ConsoleClient\\TheGeneralStore.Frontend.ConsoleClient.csproj"
+              "C:\\Users\\MartinNguyen\\source\\repos\\TheGeneralStore\\TheGeneralStore.Frontend.ConsoleClient\\TheGeneralStore.Frontend.ConsoleClient.csproj": {
+                "projectPath": "C:\\Users\\MartinNguyen\\source\\repos\\TheGeneralStore\\TheGeneralStore.Frontend.ConsoleClient\\TheGeneralStore.Frontend.ConsoleClient.csproj"
               }
             }
           }
@@ -197,14 +197,14 @@
         }
       }
     },
-    "C:\\src\\SKOLE\\H3\\TheGeneralStore\\TheGeneralStore.Frontend.ConsoleClient\\TheGeneralStore.Frontend.ConsoleClient.csproj": {
+    "C:\\Users\\MartinNguyen\\source\\repos\\TheGeneralStore\\TheGeneralStore.Frontend.ConsoleClient\\TheGeneralStore.Frontend.ConsoleClient.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\src\\SKOLE\\H3\\TheGeneralStore\\TheGeneralStore.Frontend.ConsoleClient\\TheGeneralStore.Frontend.ConsoleClient.csproj",
+        "projectUniqueName": "C:\\Users\\MartinNguyen\\source\\repos\\TheGeneralStore\\TheGeneralStore.Frontend.ConsoleClient\\TheGeneralStore.Frontend.ConsoleClient.csproj",
         "projectName": "TheGeneralStore.Frontend.ConsoleClient",
-        "projectPath": "C:\\src\\SKOLE\\H3\\TheGeneralStore\\TheGeneralStore.Frontend.ConsoleClient\\TheGeneralStore.Frontend.ConsoleClient.csproj",
+        "projectPath": "C:\\Users\\MartinNguyen\\source\\repos\\TheGeneralStore\\TheGeneralStore.Frontend.ConsoleClient\\TheGeneralStore.Frontend.ConsoleClient.csproj",
         "packagesPath": "C:\\Users\\MartinNguyen\\.nuget\\packages\\",
-        "outputPath": "C:\\src\\SKOLE\\H3\\TheGeneralStore\\TheGeneralStore.Frontend.ConsoleClient\\obj\\",
+        "outputPath": "C:\\Users\\MartinNguyen\\source\\repos\\TheGeneralStore\\TheGeneralStore.Frontend.ConsoleClient\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\DevExpress 22.2\\Components\\Offline Packages",

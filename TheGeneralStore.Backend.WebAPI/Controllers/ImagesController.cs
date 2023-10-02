@@ -17,6 +17,7 @@ namespace TheGeneralStore.Backend.WebAPI.Controllers
         private readonly IMapper mapper;
         private readonly UnitOfWork unitOfWork;
         private readonly ImageRepository imageRepository;
+        private readonly ProductRepository productRepository;
         private readonly ImageService imageService;
 
         public ImagesController
@@ -24,12 +25,14 @@ namespace TheGeneralStore.Backend.WebAPI.Controllers
             IMapper mapper,
             UnitOfWork unitOfWork,
             ImageRepository imageRepository,
+            ProductRepository productRepository,
             ImageService imageService
             )
         {
             this.mapper = mapper;
             this.unitOfWork = unitOfWork;
             this.imageRepository = imageRepository;
+            this.productRepository = productRepository;
             this.imageService = imageService;
         }
 
@@ -51,26 +54,26 @@ namespace TheGeneralStore.Backend.WebAPI.Controllers
                 {
                     createResource.ImageId = Guid.Parse(imageResult.Item2);
                     createResource.FileExtension = Path.GetExtension(createResource.ImageFile.FileName);
-                }
 
-                var entity = this.mapper.Map<ImageCreateResource, Image>(createResource);
+                    var entity = this.mapper.Map<ImageCreateResource, Image>(createResource);
 
-                try
-                {
-                    this.imageRepository.Add(entity);
-                    statusString = "Added succesfully!!";
-                }
-                catch (Exception)
-                {
-                    statusString = "Error on adding an image.";
-                    throw;
+                    try
+                    {
+                        this.imageRepository.Add(entity);
+                        statusString = "Added succesfully!!";
+                    }
+                    catch (Exception)
+                    {
+                        statusString = "Error on adding an image.";
+                        throw;
+                    }
                 }
 
                 await this.unitOfWork.SaveChangesAsync();
 
-                return Ok(statusString);
+                return Ok(new { Message = statusString });
             }
-            return Ok(statusString);
+            return Ok(new { Message = statusString });
         }
         #endregion
 
@@ -85,10 +88,9 @@ namespace TheGeneralStore.Backend.WebAPI.Controllers
             {
                 Page = filter.Page,
                 PageSize = filter.PageSize,
-                ProductId = filter.ProductId,
             };
 
-            var queryResult = await this.imageRepository.GetAllAsync(query);
+            var queryResult = await this.imageRepository.GetAllAsync(query, true);
 
             var resource = this.mapper.Map<BaseQueryResult<Image>, BaseQueryResultResource<ImageResource>>(queryResult);
 
@@ -114,28 +116,28 @@ namespace TheGeneralStore.Backend.WebAPI.Controllers
         [HttpDelete("delete/{entityId}")]
         public async Task<ActionResult> Delete(int entityId)
         {
-            string statusString = "";
-            var entity = await imageRepository.GetAsync(entityId);
+            var entity = await this.imageRepository.GetAsync(entityId);
 
             if (entity == null)
                 return NotFound();
 
+            var productEntity = await this.productRepository.GetAsync(entity.ProductId.Value);
+            productEntity.IsDeleted = true;
+
             try
             {
-                imageRepository.Remove(entity);
-                imageService.DeleteImage(entity);
-
-                statusString = "Deleted succesfully!!";
+                this.imageRepository.Remove(entity);
+                this.productRepository.Update(productEntity);
+                this.imageService.DeleteImage(entity);
 
                 await this.unitOfWork.SaveChangesAsync();
             }
             catch (Exception)
             {
-                statusString = "Error trying to delete the message";
                 throw;
             }
 
-            return Ok(statusString);
+            return Ok();
         }
         #endregion
     }

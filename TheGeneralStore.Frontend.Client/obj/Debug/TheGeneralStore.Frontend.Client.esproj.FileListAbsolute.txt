@@ -1,2 +1,4 @@
 C:\src\SKOLE\H3\TheGeneralStore\TheGeneralStore.Frontend.Client\obj\Debug\TheGeneralStore.Frontend.Client.esproj.SuggestedBindingRedirects.cache
 C:\src\SKOLE\H3\TheGeneralStore\TheGeneralStore.Frontend.Client\obj\Debug\TheGeneralStore.Frontend.Client.esproj.CoreCompileInputs.cache
+C:\src\SKOLE\H3\PROJEKT-TheGeneralStore\TheGeneralStore.Frontend.Client\obj\Debug\TheGeneralStore.Frontend.Client.esproj.SuggestedBindingRedirects.cache
+C:\src\SKOLE\H3\PROJEKT-TheGeneralStore\TheGeneralStore.Frontend.Client\obj\Debug\TheGeneralStore.Frontend.Client.esproj.CoreCompileInputs.cache

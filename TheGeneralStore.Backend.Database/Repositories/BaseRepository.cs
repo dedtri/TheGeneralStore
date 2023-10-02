@@ -6,7 +6,7 @@ using TheGeneralStore.Backend.Database.QueryModels;
 
 namespace TheGeneralStore.Backend.Database.Repositories
 {
-    public abstract class BaseRepository<T, Q>
+    public abstract class BaseRepository<T, Q> : IBaseRepository<T, Q>
            where T : BaseDataModel, new()
            where Q : BaseQueryModel
     {

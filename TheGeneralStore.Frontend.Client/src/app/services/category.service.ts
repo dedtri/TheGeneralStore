@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Category } from '../models/category.model';
 import { environment } from 'src/environments/environment';
+import { queryResult } from '../models/queryResult.model';
 
 @Injectable({
   providedIn: 'root'
@@ -22,8 +23,12 @@ export class CategoryService {
     return this.http.get<Category>(this.url + id);
   }
 
+  getByName(name: string): Observable<Category> {
+    return this.http.get<Category>(this.url + 'name/' + name);
+  }
+
   getAll() {
-    return this.http.get<Category[]>(this.url);
+    return this.http.get<queryResult>(this.url);
   }
 
   delete(id: number) {

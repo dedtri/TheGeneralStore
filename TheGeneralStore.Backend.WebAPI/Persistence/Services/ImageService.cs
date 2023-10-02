@@ -27,7 +27,7 @@ namespace TheGeneralStore.Backend.WebAPI.Persistence.Services
                 }
 
                 var ext = Path.GetExtension(image.ImageFile.FileName);
-                var allowedExtensions = new string[] { ".jpg", ".png", ".jpeg" };
+                var allowedExtensions = new string[] { ".jpg", ".png", ".jpeg", ".avif" };
                 if (!allowedExtensions.Contains(ext))
                 {
                     string msg = string.Format("Only {0} extensions are allowed", string.Join(",", allowedExtensions));
@@ -55,7 +55,7 @@ namespace TheGeneralStore.Backend.WebAPI.Persistence.Services
             {
                 var folderPath = "Uploads\\";
 
-                    var contentPath = this.environment.ContentRootPath;
+                var contentPath = this.environment.ContentRootPath;
                 var path = Path.Combine(contentPath, folderPath, image.ImageId + image.FileExtension);
                 if (File.Exists(path))
                 {

@@ -1246,11 +1246,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\src\\SKOLE\\H3\\TheGeneralStore\\TheGeneralStore.Backend.Database\\TheGeneralStore.Backend.Database.csproj",
+      "projectUniqueName": "C:\\Users\\MartinNguyen\\source\\repos\\TheGeneralStore\\TheGeneralStore.Backend.Database\\TheGeneralStore.Backend.Database.csproj",
       "projectName": "TheGeneralStore.Backend.Database",
-      "projectPath": "C:\\src\\SKOLE\\H3\\TheGeneralStore\\TheGeneralStore.Backend.Database\\TheGeneralStore.Backend.Database.csproj",
+      "projectPath": "C:\\Users\\MartinNguyen\\source\\repos\\TheGeneralStore\\TheGeneralStore.Backend.Database\\TheGeneralStore.Backend.Database.csproj",
       "packagesPath": "C:\\Users\\MartinNguyen\\.nuget\\packages\\",
-      "outputPath": "C:\\src\\SKOLE\\H3\\TheGeneralStore\\TheGeneralStore.Backend.Database\\obj\\",
+      "outputPath": "C:\\Users\\MartinNguyen\\Source\\Repos\\TheGeneralStore\\TheGeneralStore.Backend.Database\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\DevExpress 22.2\\Components\\Offline Packages",

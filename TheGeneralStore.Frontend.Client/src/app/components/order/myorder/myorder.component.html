@@ -1,0 +1,32 @@
+<div class="table-container">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Order ID</th>
+          <th>Order Date</th>
+          <th>Total</th>
+          <th>Products</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let order of queryResult">
+          <td>{{ order.id }}</td>
+          <td>{{ order.date | date }}</td>
+          <td>{{ order.total_Price }} kr.</td>
+          <td>
+            <ul>
+              <li *ngFor="let product of order.orderProducts">
+                {{ product.product.name }} x {{ product.quantity }}
+              </li>
+            </ul>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="d-flex justify-content-center">
+  <button type="button" class="btn btn-primary my-3"(click)="goBack()">Back</button>
+</div>
+
+

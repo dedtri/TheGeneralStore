@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using TheGeneralStore.Backend.Database;
 using TheGeneralStore.Backend.Database.DataModels;
@@ -24,26 +25,6 @@ namespace TheGeneralStore.Backend.WebAPI.Controllers
             this.customerRepository = customerRepository;
         }
 
-        #region Create
-        [HttpPost()]
-        public async Task<ActionResult<CustomerResource>> Create([FromBody] CustomerCreateResource createResource)
-        {
-            // Map entity
-            var entity = this.mapper.Map<CustomerCreateResource, Customer>(createResource);
-
-            // Add entity
-            this.customerRepository.Add(entity);
-
-            // Save changes
-            await this.unitOfWork.SaveChangesAsync();
-
-            // Map entity to resource
-            var resource = this.mapper.Map<Customer, CustomerResource>(entity);
-
-            return Ok(resource);
-        }
-        #endregion
-
         #region Get
         [HttpGet("{entityId}")]
         public async Task<ActionResult<CustomerResource>> Get(int entityId)
@@ -61,7 +42,7 @@ namespace TheGeneralStore.Backend.WebAPI.Controllers
         #endregion
 
         #region GetAll
-        [HttpGet]
+        [HttpGet, Authorize]
         public async Task<ActionResult<BaseQueryResultResource<CustomerResource>>> GetAll()
         {
             // Create query

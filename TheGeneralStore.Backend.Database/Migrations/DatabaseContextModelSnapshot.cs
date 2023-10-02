@@ -19,40 +19,15 @@ namespace TheGeneralStore.Backend.Database.Migrations
                 .HasAnnotation("ProductVersion", "7.0.10")
                 .HasAnnotation("Relational:MaxIdentifierLength", 64);
 
-            modelBuilder.Entity("TheGeneralStore.Backend.Database.DataModels.Cart", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    b.Property<int?>("CustomerId")
-                        .HasColumnType("int");
-
-                    b.Property<bool>("IsDeleted")
-                        .HasColumnType("tinyint(1)");
-
-                    b.Property<int?>("ProductId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("Quantity")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("CustomerId");
-
-                    b.HasIndex("IsDeleted");
-
-                    b.HasIndex("ProductId");
-
-                    b.ToTable("carts");
-                });
-
             modelBuilder.Entity("TheGeneralStore.Backend.Database.DataModels.Category", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime(6)");
 
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("tinyint(1)");
@@ -62,6 +37,8 @@ namespace TheGeneralStore.Backend.Database.Migrations
                         .HasColumnType("varchar(50)");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("CreatedAt");
 
                     b.HasIndex("IsDeleted");
 
@@ -76,6 +53,10 @@ namespace TheGeneralStore.Backend.Database.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime(6)");
 
                     b.Property<string>("Email")
                         .HasMaxLength(100)
@@ -92,11 +73,45 @@ namespace TheGeneralStore.Backend.Database.Migrations
                         .HasMaxLength(50)
                         .HasColumnType("varchar(50)");
 
+                    b.Property<string>("Password")
+                        .HasMaxLength(100)
+                        .HasColumnType("varchar(100)");
+
+                    b.Property<string>("RefreshToken")
+                        .HasMaxLength(255)
+                        .HasColumnType("varchar(255)");
+
+                    b.Property<DateTime>("RefreshTokenExpiryTime")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<string>("Role")
+                        .ValueGeneratedOnAdd()
+                        .HasMaxLength(40)
+                        .HasColumnType("varchar(40)")
+                        .HasDefaultValue("User");
+
                     b.HasKey("Id");
+
+                    b.HasIndex("CreatedAt");
+
+                    b.HasIndex("Email")
+                        .IsUnique();
 
                     b.HasIndex("IsDeleted");
 
                     b.ToTable("customers");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Email = "admin@TGS.dk",
+                            IsDeleted = false,
+                            Password = "123456",
+                            RefreshTokenExpiryTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Role = "Admin"
+                        });
                 });
 
             modelBuilder.Entity("TheGeneralStore.Backend.Database.DataModels.Image", b =>
@@ -104,6 +119,10 @@ namespace TheGeneralStore.Backend.Database.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime(6)");
 
                     b.Property<string>("FileExtension")
                         .HasMaxLength(10)
@@ -120,6 +139,8 @@ namespace TheGeneralStore.Backend.Database.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("CreatedAt");
+
                     b.HasIndex("IsDeleted");
 
                     b.HasIndex("ProductId");
@@ -127,39 +148,15 @@ namespace TheGeneralStore.Backend.Database.Migrations
                     b.ToTable("images");
                 });
 
-            modelBuilder.Entity("TheGeneralStore.Backend.Database.DataModels.Login", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    b.Property<bool>("IsDeleted")
-                        .HasColumnType("tinyint(1)");
-
-                    b.Property<string>("Password")
-                        .HasMaxLength(50)
-                        .HasColumnType("varchar(50)");
-
-                    b.Property<string>("Role")
-                        .HasMaxLength(20)
-                        .HasColumnType("varchar(20)");
-
-                    b.Property<string>("Username")
-                        .HasMaxLength(50)
-                        .HasColumnType("varchar(50)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("IsDeleted");
-
-                    b.ToTable("logins");
-                });
-
             modelBuilder.Entity("TheGeneralStore.Backend.Database.DataModels.Order", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime(6)");
 
                     b.Property<int>("CustomerId")
                         .HasColumnType("int");
@@ -175,6 +172,8 @@ namespace TheGeneralStore.Backend.Database.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("CreatedAt");
+
                     b.HasIndex("CustomerId");
 
                     b.HasIndex("IsDeleted");
@@ -187,6 +186,10 @@ namespace TheGeneralStore.Backend.Database.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime(6)");
 
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("tinyint(1)");
@@ -204,6 +207,8 @@ namespace TheGeneralStore.Backend.Database.Migrations
                         .HasColumnType("int");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("CreatedAt");
 
                     b.HasIndex("IsDeleted");
 
@@ -223,6 +228,10 @@ namespace TheGeneralStore.Backend.Database.Migrations
                     b.Property<int?>("CategoryId")
                         .HasColumnType("int");
 
+                    b.Property<DateTime>("CreatedAt")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime(6)");
+
                     b.Property<string>("Description")
                         .HasMaxLength(100)
                         .HasColumnType("varchar(100)");
@@ -237,31 +246,15 @@ namespace TheGeneralStore.Backend.Database.Migrations
                     b.Property<decimal>("Price")
                         .HasColumnType("decimal(65,30)");
 
-                    b.Property<int>("Stock")
-                        .HasColumnType("int");
-
                     b.HasKey("Id");
 
                     b.HasIndex("CategoryId");
 
+                    b.HasIndex("CreatedAt");
+
                     b.HasIndex("IsDeleted");
 
                     b.ToTable("products");
-                });
-
-            modelBuilder.Entity("TheGeneralStore.Backend.Database.DataModels.Cart", b =>
-                {
-                    b.HasOne("TheGeneralStore.Backend.Database.DataModels.Customer", "Customer")
-                        .WithMany("Carts")
-                        .HasForeignKey("CustomerId");
-
-                    b.HasOne("TheGeneralStore.Backend.Database.DataModels.Product", "Product")
-                        .WithMany("Carts")
-                        .HasForeignKey("ProductId");
-
-                    b.Navigation("Customer");
-
-                    b.Navigation("Product");
                 });
 
             modelBuilder.Entity("TheGeneralStore.Backend.Database.DataModels.Image", b =>
@@ -319,8 +312,6 @@ namespace TheGeneralStore.Backend.Database.Migrations
 
             modelBuilder.Entity("TheGeneralStore.Backend.Database.DataModels.Customer", b =>
                 {
-                    b.Navigation("Carts");
-
                     b.Navigation("Orders");
                 });
 
@@ -331,8 +322,6 @@ namespace TheGeneralStore.Backend.Database.Migrations
 
             modelBuilder.Entity("TheGeneralStore.Backend.Database.DataModels.Product", b =>
                 {
-                    b.Navigation("Carts");
-
                     b.Navigation("Images");
 
                     b.Navigation("OrderProducts");

@@ -26,3 +26,17 @@ C:\src\SKOLE\H3\TheGeneralStore\TheGeneralStore.Backend.Database\obj\Debug\net7.
 C:\src\SKOLE\H3\TheGeneralStore\TheGeneralStore.Backend.Database\obj\Debug\net7.0\TheGeneralStore.Backend.Database.pdb
 C:\src\SKOLE\H3\TheGeneralStore\TheGeneralStore.Backend.Database\obj\Debug\net7.0\TheGeneralStore.Backend.Database.genruntimeconfig.cache
 C:\src\SKOLE\H3\TheGeneralStore\TheGeneralStore.Backend.Database\obj\Debug\net7.0\ref\TheGeneralStore.Backend.Database.dll
+C:\src\SKOLE\H3\PROJEKT-TheGeneralStore\TheGeneralStore.Backend.Database\bin\Debug\net7.0\TheGeneralStore.Backend.Database.deps.json
+C:\src\SKOLE\H3\PROJEKT-TheGeneralStore\TheGeneralStore.Backend.Database\bin\Debug\net7.0\TheGeneralStore.Backend.Database.runtimeconfig.json
+C:\src\SKOLE\H3\PROJEKT-TheGeneralStore\TheGeneralStore.Backend.Database\bin\Debug\net7.0\TheGeneralStore.Backend.Database.dll
+C:\src\SKOLE\H3\PROJEKT-TheGeneralStore\TheGeneralStore.Backend.Database\bin\Debug\net7.0\TheGeneralStore.Backend.Database.pdb
+C:\src\SKOLE\H3\PROJEKT-TheGeneralStore\TheGeneralStore.Backend.Database\obj\Debug\net7.0\TheGeneralStore.Backend.Database.csproj.AssemblyReference.cache
+C:\src\SKOLE\H3\PROJEKT-TheGeneralStore\TheGeneralStore.Backend.Database\obj\Debug\net7.0\TheGeneralStore.Backend.Database.GeneratedMSBuildEditorConfig.editorconfig
+C:\src\SKOLE\H3\PROJEKT-TheGeneralStore\TheGeneralStore.Backend.Database\obj\Debug\net7.0\TheGeneralStore.Backend.Database.AssemblyInfoInputs.cache
+C:\src\SKOLE\H3\PROJEKT-TheGeneralStore\TheGeneralStore.Backend.Database\obj\Debug\net7.0\TheGeneralStore.Backend.Database.AssemblyInfo.cs
+C:\src\SKOLE\H3\PROJEKT-TheGeneralStore\TheGeneralStore.Backend.Database\obj\Debug\net7.0\TheGeneralStore.Backend.Database.csproj.CoreCompileInputs.cache
+C:\src\SKOLE\H3\PROJEKT-TheGeneralStore\TheGeneralStore.Backend.Database\obj\Debug\net7.0\TheGeneralStore.Backend.Database.dll
+C:\src\SKOLE\H3\PROJEKT-TheGeneralStore\TheGeneralStore.Backend.Database\obj\Debug\net7.0\refint\TheGeneralStore.Backend.Database.dll
+C:\src\SKOLE\H3\PROJEKT-TheGeneralStore\TheGeneralStore.Backend.Database\obj\Debug\net7.0\TheGeneralStore.Backend.Database.pdb
+C:\src\SKOLE\H3\PROJEKT-TheGeneralStore\TheGeneralStore.Backend.Database\obj\Debug\net7.0\TheGeneralStore.Backend.Database.genruntimeconfig.cache
+C:\src\SKOLE\H3\PROJEKT-TheGeneralStore\TheGeneralStore.Backend.Database\obj\Debug\net7.0\ref\TheGeneralStore.Backend.Database.dll

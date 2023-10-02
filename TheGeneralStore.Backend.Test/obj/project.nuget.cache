@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "SUH3mgiFHkATNAxEfRvXNDYW46VCqbRRnVasWGg29qpd6/agJyL0cSYNdtS+mKj7TRUUGLyRK/TB74YQsuG2fg==",
+  "dgSpecHash": "E5rZJvgeGfINizdEN6uIAc6swjac75zF1/PUsIibi0anVl7ejttILoPXXA4K15OtnjENIjVi6hszAUKR0YZqcw==",
   "success": true,
-  "projectFilePath": "C:\\src\\SKOLE\\H3\\TheGeneralStore\\TheGeneralStore.Backend.Test\\TheGeneralStore.Backend.Test.csproj",
+  "projectFilePath": "C:\\Users\\MartinNguyen\\source\\repos\\TheGeneralStore\\TheGeneralStore.Backend.Test\\TheGeneralStore.Backend.Test.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\MartinNguyen\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\MartinNguyen\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",

@@ -1,0 +1,20 @@
+<div class="container my-5" style="background-color: rgba(205, 168, 221, 0.538); width: 60vh; border: 5px solid rgba(0, 0, 0, 0.31);">
+
+    <div class="pt-3">
+      <h3>Products in Order</h3>
+      <ul class="list-group">
+        <li *ngFor="let product of order.orderProducts" class="list-group-item">
+          {{ product.quantity }} x {{ product.name }} - {{ product.price * product.quantity }} kr.
+        </li>
+      </ul>
+    </div>
+  
+    <h2 class="mt-4">Order Summary</h2>
+  
+    <div class="order-details">
+      <p><strong>Date:</strong> {{ order.date | date }}</p>
+      <p><strong>Total Price:</strong> {{ order.total_price }} kr.</p>
+    </div>
+  
+    <button class="btn btn-primary my-3" (click)="confirmOrder()">Confirm Order</button>
+  </div>

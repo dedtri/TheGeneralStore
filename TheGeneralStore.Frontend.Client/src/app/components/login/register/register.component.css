@@ -1,0 +1,47 @@
+.errorMsg {
+    font-weight: bold;
+    font-size: 20px;
+    color: red;
+    text-shadow: 2px 0 0 #000, 2px 1px 0 #000, 1px 1.7px 0 #000, -1px 2px 0 #000;
+    width: 80%;
+    padding: 4px;
+    margin: auto;
+    animation: blinker 1.5s linear infinite;
+   }
+
+   .successdiv {
+     font-size: 20px;
+   }
+
+   .successdiv span {
+    color: violet;
+   }
+
+   .validationMsg {
+    color: black;
+    margin-top: 5px;
+    margin-bottom: 5px;
+   }
+
+   img {
+    height: 150px;
+    width: 150px;
+   }
+
+.formBox {
+  border: 7px solid
+  rgba(0, 0, 0, 0.5);
+  border-radius: 15% 15%;
+  background-color: rgba(24, 0, 92, 0.479);
+  padding: 20px;
+  width: 550px;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  font-weight: 400;
+  color: white;
+  letter-spacing: 3px;
+}

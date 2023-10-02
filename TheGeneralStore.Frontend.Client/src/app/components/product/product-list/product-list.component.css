@@ -1,0 +1,19 @@
+.tablerow {
+    transition: all 400ms;
+}
+
+.tablerow:hover {
+    border: 4px rgba(0, 0, 100, 0.2) solid;
+    cursor: pointer;
+    transition: all 400ms;
+}
+
+.tablerow:hover img {
+    height: 125px;
+    width: 125px;
+    transition: all 200ms;
+}
+
+img {
+    transition: all 200ms;
+}

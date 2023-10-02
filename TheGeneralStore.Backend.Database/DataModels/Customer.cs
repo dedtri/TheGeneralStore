@@ -12,10 +12,17 @@ namespace TheGeneralStore.Backend.Database.DataModels
         public string LastName { get; set; }
         [StringLength(100)]
         public string Email { get; set; }
+        [StringLength(40)]
+        public string? Role { get; set; }
+        [StringLength(100)]
+        public string? Password { get; set; }
+        [StringLength(255)]
+        public string? RefreshToken { get; set; }
+        public DateTime RefreshTokenExpiryTime { get; set; }
+
 
         #region Relations
         public virtual ICollection<Order> Orders { get; set; }
-        public virtual ICollection<Cart> Carts { get; set; }
         #endregion
     }
 }

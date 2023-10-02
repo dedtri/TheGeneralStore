@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\src\\SKOLE\\H3\\TheGeneralStore\\TheGeneralStore.Backend.WebAPI\\TheGeneralStore.Backend.WebAPI.csproj": {}
+    "C:\\Users\\MartinNguyen\\source\\repos\\TheGeneralStore\\TheGeneralStore.Backend.WebAPI\\TheGeneralStore.Backend.WebAPI.csproj": {}
   },
   "projects": {
-    "C:\\src\\SKOLE\\H3\\TheGeneralStore\\TheGeneralStore.Backend.Database\\TheGeneralStore.Backend.Database.csproj": {
+    "C:\\Users\\MartinNguyen\\source\\repos\\TheGeneralStore\\TheGeneralStore.Backend.Database\\TheGeneralStore.Backend.Database.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\src\\SKOLE\\H3\\TheGeneralStore\\TheGeneralStore.Backend.Database\\TheGeneralStore.Backend.Database.csproj",
+        "projectUniqueName": "C:\\Users\\MartinNguyen\\source\\repos\\TheGeneralStore\\TheGeneralStore.Backend.Database\\TheGeneralStore.Backend.Database.csproj",
         "projectName": "TheGeneralStore.Backend.Database",
-        "projectPath": "C:\\src\\SKOLE\\H3\\TheGeneralStore\\TheGeneralStore.Backend.Database\\TheGeneralStore.Backend.Database.csproj",
+        "projectPath": "C:\\Users\\MartinNguyen\\source\\repos\\TheGeneralStore\\TheGeneralStore.Backend.Database\\TheGeneralStore.Backend.Database.csproj",
         "packagesPath": "C:\\Users\\MartinNguyen\\.nuget\\packages\\",
-        "outputPath": "C:\\src\\SKOLE\\H3\\TheGeneralStore\\TheGeneralStore.Backend.Database\\obj\\",
+        "outputPath": "C:\\Users\\MartinNguyen\\Source\\Repos\\TheGeneralStore\\TheGeneralStore.Backend.Database\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\DevExpress 22.2\\Components\\Offline Packages",
@@ -101,14 +101,14 @@
         }
       }
     },
-    "C:\\src\\SKOLE\\H3\\TheGeneralStore\\TheGeneralStore.Backend.WebAPI\\TheGeneralStore.Backend.WebAPI.csproj": {
+    "C:\\Users\\MartinNguyen\\source\\repos\\TheGeneralStore\\TheGeneralStore.Backend.WebAPI\\TheGeneralStore.Backend.WebAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\src\\SKOLE\\H3\\TheGeneralStore\\TheGeneralStore.Backend.WebAPI\\TheGeneralStore.Backend.WebAPI.csproj",
+        "projectUniqueName": "C:\\Users\\MartinNguyen\\source\\repos\\TheGeneralStore\\TheGeneralStore.Backend.WebAPI\\TheGeneralStore.Backend.WebAPI.csproj",
         "projectName": "TheGeneralStore.Backend.WebAPI",
-        "projectPath": "C:\\src\\SKOLE\\H3\\TheGeneralStore\\TheGeneralStore.Backend.WebAPI\\TheGeneralStore.Backend.WebAPI.csproj",
+        "projectPath": "C:\\Users\\MartinNguyen\\source\\repos\\TheGeneralStore\\TheGeneralStore.Backend.WebAPI\\TheGeneralStore.Backend.WebAPI.csproj",
         "packagesPath": "C:\\Users\\MartinNguyen\\.nuget\\packages\\",
-        "outputPath": "C:\\src\\SKOLE\\H3\\TheGeneralStore\\TheGeneralStore.Backend.WebAPI\\obj\\",
+        "outputPath": "C:\\Users\\MartinNguyen\\Source\\Repos\\TheGeneralStore\\TheGeneralStore.Backend.WebAPI\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\DevExpress 22.2\\Components\\Offline Packages",
@@ -133,8 +133,8 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "C:\\src\\SKOLE\\H3\\TheGeneralStore\\TheGeneralStore.Backend.Database\\TheGeneralStore.Backend.Database.csproj": {
-                "projectPath": "C:\\src\\SKOLE\\H3\\TheGeneralStore\\TheGeneralStore.Backend.Database\\TheGeneralStore.Backend.Database.csproj"
+              "C:\\Users\\MartinNguyen\\source\\repos\\TheGeneralStore\\TheGeneralStore.Backend.Database\\TheGeneralStore.Backend.Database.csproj": {
+                "projectPath": "C:\\Users\\MartinNguyen\\source\\repos\\TheGeneralStore\\TheGeneralStore.Backend.Database\\TheGeneralStore.Backend.Database.csproj"
               }
             }
           }
@@ -156,6 +156,14 @@
             "AutoMapper.Extensions.Microsoft.DependencyInjection": {
               "target": "Package",
               "version": "[12.0.1, )"
+            },
+            "CompressedStaticFiles": {
+              "target": "Package",
+              "version": "[2.1.0, )"
+            },
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[7.0.11, )"
             },
             "Microsoft.AspNetCore.Mvc.NewtonsoftJson": {
               "target": "Package",

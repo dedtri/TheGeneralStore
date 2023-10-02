@@ -1,0 +1,67 @@
+<div class="container my-5 py-5" *ngIf="invalidRegister">
+      <form [formGroup]="loginForm" (ngSubmit)="registerUser()" class="formBox">
+      <div class="mb-3">
+          <h1 class="mb-4">New account</h1>
+          <div class="avatar mb-4"><img src="assets/avatar.png"></div>
+        <label for="firstname" class="form-label">First Name</label>
+        <input type="text" class="form-control" id="firstname" formControlName="firstname" />
+        <div class="validBox" *ngIf="submitted && loginForm.get('firstname')?.invalid">
+          <div class="validationMsg" *ngIf="loginForm.get('firstname')?.errors?.['required']">
+            Firstname is required.
+          </div>
+          <div class="validationMsg" *ngIf="loginForm.get('firstname')?.errors?.['minlength']">
+            Firstname needs to be at least 2 characters.
+          </div>
+        </div>
+        <label for="firstname" class="form-label">Last Name</label>
+        <input type="text" class="form-control" id="lastname" formControlName="lastname" />
+        <div class="validBox" *ngIf="submitted && loginForm.get('lastname')?.invalid">
+          <div class="validationMsg" *ngIf="loginForm.get('lastname')?.errors?.['required']">
+            Lastname is required.
+          </div>
+          <div class="validationMsg" *ngIf="loginForm.get('lastname')?.errors?.['minlength']">
+            Lastname needs to be at least 2 characters.
+          </div>
+        </div>
+        <label for="email" class="form-label">Email</label>
+        <input type="text" class="form-control" id="email" formControlName="email" />
+        <div class="validBox" *ngIf="submitted && loginForm.get('email')?.invalid">
+          <div class="validationMsg" *ngIf="loginForm.get('email')?.errors?.['required']">
+            Email is required.
+          </div>
+          <div class="validationMsg" *ngIf="loginForm.get('email')?.errors?.['minlength']">
+            Email needs to be at least 5 characters.
+          </div>
+        </div>
+        <label for="password" class="form-label">Password</label>
+        <input type="password" class="form-control" id="password" formControlName="password" />
+        <div class="validBox" *ngIf="submitted && loginForm.get('password')?.invalid">
+            <div class="validationMsg" *ngIf="loginForm.get('password')?.errors?.['required']">
+              Password is required.
+            </div>
+            <div class="validationMsg" *ngIf="loginForm.get('password')?.errors?.['minlength']">
+              Password needs to be at least 6 characters.
+            </div>
+          </div>
+      </div>
+
+      <div id="errorMsg" class="errorMsg" *ngIf="errorMessage">
+        {{ errorMessage }}
+      </div>
+      <button type="submit" class="btn btn-success mt-4">Register Account</button>
+      <button type="button" class="btn btn-primary mt-4 mx-3 button-danger" (click)="goBack()">Go Back</button>
+    </form>
+  </div>
+
+  <div class="container" *ngIf="!invalidRegister">
+  <div class="my-5 py-5 successdiv">
+    <p style="color: green;">Successfully registered an account!</p>
+    <h1 style="color: black;">WELCOME TO THE GENERAL STORE</h1>
+    <p class="my-4" style="color: black;">You've been logged in as <span>{{ addLoginRequest.email | titlecase}}</span></p>
+    <img src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExY3l4MjB5bW9jMzRmZXZiNmlzMWllem5tN2ZmajZycHZ0OXg4ZDd5MiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/Aik2hwXn0dUTrVkbIP/giphy.gif">
+    <div><button type="button" class="btn btn-primary mx-2" (click)="goBack()">Back</button>
+    <a routerLink="/"><button type="button" class="btn btn-danger mx-2" (click)="logOut()">Logout</button></a></div>
+  </div>
+</div>
+
+

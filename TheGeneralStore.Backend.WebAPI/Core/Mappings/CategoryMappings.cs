@@ -8,11 +8,13 @@ namespace TheGeneralStore.Backend.WebAPI.Core.Mappings
     {
         public CategoryMappings()
         {
-            // API to Resource
+            // Mapping DataModel to Resource
             CreateMap<Category, CategoryResource>();
 
-            // Resource to API
+            // Mapping Resource to DataModel
             CreateMap<CategoryCreateResource, Category>();
+            CreateMap<CategoryUpdateResource, Category>();
+
         }
     }
 }

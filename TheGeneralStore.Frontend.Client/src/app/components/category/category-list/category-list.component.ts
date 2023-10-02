@@ -11,7 +11,8 @@ import { CategoryCreateComponent } from '../category-create/category-create.comp
 })
 export class CategoryListComponent {
 
-  categories: any = {};
+  categories: any;
+  products: any;
 
   constructor(public dialog: MatDialog, private router: Router, private categoryService: CategoryService) {
 
@@ -22,7 +23,8 @@ export class CategoryListComponent {
   initialize() {
     this.categoryService.getAll().subscribe({
       next: (res) => {
-        this.categories = res;
+        this.categories = res.entities;
+        console.log(this.categories);
       },
       error: (err) => {
         console.log(err)
@@ -49,7 +51,9 @@ export class CategoryListComponent {
 
     event.stopPropagation();
 
-    this.categoryService.delete(category.id).subscribe({
+    category.isDeleted = 1;
+
+    this.categoryService.update(category.id, category).subscribe({
       next: (res) => {
         console.log(res);
         this.initialize();

@@ -1,11 +1,14 @@
 ﻿using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using TheGeneralStore.Backend.Database;
 using TheGeneralStore.Backend.Database.DataModels;
 using TheGeneralStore.Backend.Database.QueryModels;
 using TheGeneralStore.Backend.Database.Repositories;
 using TheGeneralStore.Backend.WebAPI.Controllers.Resources;
+using TheGeneralStore.Backend.WebAPI.Controllers.Resources.Images;
 using TheGeneralStore.Backend.WebAPI.Controllers.Resources.Products;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace TheGeneralStore.Backend.WebAPI.Controllers
 {
@@ -16,12 +19,14 @@ namespace TheGeneralStore.Backend.WebAPI.Controllers
         private readonly IMapper mapper;
         private readonly UnitOfWork unitOfWork;
         private readonly ProductRepository productRepository;
+        private readonly ImageRepository imageRepository;
 
-        public ProductsController(IMapper mapper, UnitOfWork unitOfWork, ProductRepository productRepository)
+        public ProductsController(IMapper mapper, UnitOfWork unitOfWork, ProductRepository productRepository, ImageRepository imageRepository)
         {
             this.mapper = mapper;
             this.unitOfWork = unitOfWork;
             this.productRepository = productRepository;
+            this.imageRepository = imageRepository;
         }
 
         #region Create
@@ -49,7 +54,7 @@ namespace TheGeneralStore.Backend.WebAPI.Controllers
         public async Task<ActionResult<ProductResource>> Get(int entityId)
         {
             // Get entity
-            var entity = await this.productRepository.GetAsync(entityId);
+            var entity = await this.productRepository.GetAsync(entityId, true);
             if (entity == null)
                 return NotFound();
 
@@ -61,13 +66,17 @@ namespace TheGeneralStore.Backend.WebAPI.Controllers
         #endregion
 
         #region GetAll
-        [HttpGet]
-        public async Task<ActionResult<BaseQueryResultResource<ProductResource>>> GetAll()
+        [HttpGet, Authorize]
+        public async Task<ActionResult<BaseQueryResultResource<ProductResource>>> GetAll([FromQuery] ProductQueryResource filter)
         {
+            if (filter.PageSize == 0)
+                filter.PageSize = -1;
+
             // Create query
             var query = new ProductQuery()
             {
-                PageSize = -1
+                Page = filter.Page,
+                PageSize = filter.PageSize,
             };
 
             // Get entities
@@ -80,6 +89,32 @@ namespace TheGeneralStore.Backend.WebAPI.Controllers
         }
         #endregion
 
+        #region Update
+        [HttpPut("{entityId}")]
+        public async Task<ActionResult> Update(int entityId, [FromBody] ProductUpdateResouce updateResource)
+        {
+            var entity = await this.productRepository.GetAsync(entityId, true);
+            if (entity == null)
+                return NotFound();
+
+            if (updateResource.IsDeleted == true)
+            {
+                foreach (var image in entity.Images)
+                {
+                    var entityImages = await this.imageRepository.GetAsync(image.Id);
+                    entityImages.IsDeleted = true;
+                    this.imageRepository.Update(entityImages);
+                }
+            }
+
+            this.mapper.Map<ProductUpdateResouce, Product>(updateResource, entity);
+
+            await this.unitOfWork.SaveChangesAsync();
+
+            return NoContent();
+        }
+        #endregion
+
         #region Delete
         [HttpDelete("delete/{entityId}")]
         public async Task<ActionResult> Delete(int entityId)
@@ -89,7 +124,7 @@ namespace TheGeneralStore.Backend.WebAPI.Controllers
             if (entity == null)
                 return NotFound();
 
-            //Delete Entity
+            //Delete entity
             try
             {
                 productRepository.Remove(entity);

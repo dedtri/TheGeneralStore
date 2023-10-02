@@ -11,11 +11,9 @@ namespace TheGeneralStore.Backend.Database.DataModels
         [StringLength(100)]
         public string Description { get; set; }
         public decimal Price { get; set; }
-        public int Stock { get; set; }
 
         #region Relations
         public virtual ICollection<OrderProduct> OrderProducts { get; set; }
-        public virtual ICollection<Cart> Carts { get; set; }
         public virtual ICollection<Image> Images { get; set; }  
 
         public virtual Category Category { get; set; }

@@ -16,12 +16,14 @@ namespace TheGeneralStore.Backend.WebAPI.Controllers
         private readonly IMapper mapper;
         private readonly UnitOfWork unitOfWork;
         private readonly CategoryRepository categoryRepository;
+        private readonly ProductRepository productRepository;
 
-        public CategoriesController(IMapper mapper, UnitOfWork unitOfWork, CategoryRepository categoryRepository)
+        public CategoriesController(IMapper mapper, UnitOfWork unitOfWork, CategoryRepository categoryRepository, ProductRepository productRepository)
         {
             this.mapper = mapper;
             this.unitOfWork = unitOfWork;
             this.categoryRepository = categoryRepository;
+            this.productRepository = productRepository;
         }
 
         #region Create
@@ -60,6 +62,22 @@ namespace TheGeneralStore.Backend.WebAPI.Controllers
         }
         #endregion
 
+        #region GetByName
+        [HttpGet("name/{entityName}")]
+        public async Task<ActionResult<CategoryResource>> Get(string entityName)
+        {
+            // Get entity
+            var entity = await this.categoryRepository.GetByNameAsync(entityName, true);
+            if (entity == null)
+                return NotFound();
+
+            // Map entity to resource
+            var resource = this.mapper.Map<Category, CategoryResource>(entity);
+
+            return Ok(resource);
+        }
+        #endregion
+
         #region GetAll
         [HttpGet]
         public async Task<ActionResult<BaseQueryResultResource<CategoryResource>>> GetAll()
@@ -77,6 +95,32 @@ namespace TheGeneralStore.Backend.WebAPI.Controllers
             var resource = this.mapper.Map<BaseQueryResult<Category>, BaseQueryResultResource<CategoryResource>>(queryResult);
 
             return resource;
+        }
+        #endregion
+
+        #region Update
+        [HttpPut("{entityId}")]
+        public async Task<ActionResult> Update(int entityId, [FromBody] CategoryUpdateResource updateResource)
+        {
+            var entity = await this.categoryRepository.GetAsync(entityId, true);
+            if (entity == null)
+                return NotFound();
+
+            if (updateResource.IsDeleted == true)
+            {
+                foreach (var product in entity.Products)
+                {
+                    var entityProduct = await this.productRepository.GetAsync(product.Id);
+                    entityProduct.IsDeleted = true;
+                    this.productRepository.Update(entityProduct);
+                }
+            }
+
+            this.mapper.Map<CategoryUpdateResource, Category>(updateResource, entity);
+
+            await this.unitOfWork.SaveChangesAsync();
+
+            return NoContent();
         }
         #endregion
 

@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Image } from '../models/image.model';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
+import { queryResult } from '../models/queryResult.model';
 
 @Injectable({
   providedIn: 'root'
@@ -18,7 +19,7 @@ export class ImageService {
     let formData = new FormData();
     formData.append("imageFile", image.imageFile);
     formData.append("ProductId", image.ProductId);
-    return this.http.post<Image>(this.url, formData)
+    return this.http.post<any>(this.url, formData)
   }
 
   get(id: string | number): Observable<Image> {
@@ -26,7 +27,7 @@ export class ImageService {
   }
 
   getAll(filter: any) {
-    return this.http.get<Image[]>(this.url + '?' + this.toQueryString(filter));
+    return this.http.get<queryResult>(this.url + '?' + this.toQueryString(filter));
   }
 
   delete(id: number) {

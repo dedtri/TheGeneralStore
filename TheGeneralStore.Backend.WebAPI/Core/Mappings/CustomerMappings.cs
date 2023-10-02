@@ -8,10 +8,10 @@ namespace TheGeneralStore.Backend.WebAPI.Core.Mappings
     {
         public CustomerMappings()
         {
-            // API to Resource
+            // Mapping DataModel to Resource
             CreateMap<Customer, CustomerResource>();
 
-            // Resource to API
+            // Mapping Resource to DataModel
             CreateMap<CustomerCreateResource, Customer>();
         }
     }

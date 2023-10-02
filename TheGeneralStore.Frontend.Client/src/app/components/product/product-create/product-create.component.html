@@ -5,21 +5,23 @@
 
  
         <div class="navbar-nav">
-          <button class="btn btn-secondary">Product Details</button>
-          <button class="btn btn-secondary">Image</button>
+
+          <button class="activeComponent btn btn-secondary" id="pdLink" (click)="navigate('pd')">Product Details</button>
+          <button [disabled]="!productExist" class="btn btn-secondary" id="udLink" (click)="navigate('ud')">Upload Image</button>
+
         </div>
    
         </div>
         <div>
           <button class="btn btn-danger mx-2" (click)="cancel()">Cancel</button>
-          <button class="btn btn-success">Create</button>
-          <!-- <button *ngIf="projectExist" class="btn btn-success" (click)="save()">Save</button> -->
+          <button *ngIf="!productExist" class="btn btn-success" (click)="save()">Create</button>
+          <button *ngIf="productExist" class="btn btn-success" (click)="save()">Save</button>
         </div>
     </div>
   </nav>
 
 <mat-dialog-content>  
-  <app-product-create-details [hidden]="!isProjectDetails"></app-product-create-details>
+  <app-product-create-details [hidden]="!isProjectDetails" [createProduct]="createProduct" (createProductChange)="onChildProductChange($event)"></app-product-create-details>
   <app-image-upload [hidden]="!isImageUpload" [productId]="createProduct.id"></app-image-upload>
 </mat-dialog-content>
 

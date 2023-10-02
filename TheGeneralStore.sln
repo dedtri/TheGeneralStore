@@ -9,9 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TheGeneralStore.Backend.Web
 EndProject
 Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "TheGeneralStore.Frontend.Client", "TheGeneralStore.Frontend.Client\TheGeneralStore.Frontend.Client.esproj", "{4F4C6CB3-619A-4D04-B819-5400DB7369B1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TheGeneralStore.Frontend.ConsoleClient", "TheGeneralStore.Frontend.ConsoleClient\TheGeneralStore.Frontend.ConsoleClient.csproj", "{274E1FD9-89D3-4A5F-BB71-93FBCED4E300}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TheGeneralStore.Frontend.ConsoleClient", "TheGeneralStore.Frontend.ConsoleClient\TheGeneralStore.Frontend.ConsoleClient.csproj", "{274E1FD9-89D3-4A5F-BB71-93FBCED4E300}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TheGeneralStore.Backend.Test", "TheGeneralStore.Backend.Test\TheGeneralStore.Backend.Test.csproj", "{821E7CEF-B098-4198-A84B-1913A4B85510}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TheGeneralStore.Backend.Test", "TheGeneralStore.Backend.Test\TheGeneralStore.Backend.Test.csproj", "{821E7CEF-B098-4198-A84B-1913A4B85510}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

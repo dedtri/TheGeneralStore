@@ -2,6 +2,5 @@
 {
     public class ImageQuery : BaseQueryModel
     {
-        public int? ProductId { get; set; }
     }
 }

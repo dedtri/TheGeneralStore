@@ -1,1 +1,18 @@
-<p>product-details works!</p>
+<nav *ngIf="categories" class="navbar-light py-2" style="background-color: rgba(0, 0, 255, 0.25); border-bottom: 2px black solid;">
+    <a *ngFor="let category of categories.entities" class="navbar-brand mx-5" style="margin: auto;" routerLink="/categories/{{category.name}}">{{category.name | uppercase}}</a>
+</nav>
+
+<div *ngIf="product" class="container d-flex justify-content-center align-items-center" style="height: 60vh;">
+<div style="background-color: white;">
+    <img [src]="imageUrl+product.images[0].imageId+product.images[0].fileExtension" alt="Image" width="300" height="300"/>
+</div>
+<div class="mx-4" style="background-color: white;">
+    <h1>{{product.name}}</h1>
+    <p>{{product.description}}</p>
+    <p>Price: {{product.price}} kr.</p>
+    <button class="btn btn-danger mx-1 my-3" (click)="removeFromCart(product.id)" *ngIf="removeCart">Remove from Cart</button>
+    <button class="btn btn-warning mx-1 my-3" (click)="addToCart()" *ngIf="!removeCart">Add to Cart</button>
+</div>
+</div>
+<div class="d-flex justify-content-center"><button class="btn btn-primary mx-2 my-2" style="margin: auto;" (click)="back()">Back</button></div>
+<div></div>

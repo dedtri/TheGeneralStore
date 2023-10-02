@@ -1,6 +1,37 @@
-<div class="d-flex justify-content-center" style="flex-direction: column; height: 60vh;">
+<div class="d-flex justify-content-center" style="flex-direction: column;">
     <button class="btn btn-primary my-4" style="margin: auto;" (click)="openCreateDialog()">Create Product</button>
-<div id="grid" style="margin: auto;">
+    <table class="table tabletext table-striped" style="text-align: center;">
+      <thead>
+        <tr>
+          <th scope="col"> </th>
+          <th scope="col">Name</th>
+          <th scope="col">Description</th>
+          <th scope="col">Price</th>
+          <th scope="col">Category</th>
+          <th scope="col"> </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let product of products" class="tablerow" (click)="goProductDetails(product.id)"> 
+          <td><img [src]="imageUrl+product.images[0].imageId+product.images[0].fileExtension" alt="Image" width="75" height="100"/></td>
+          <td style="padding: 25px 0;">{{product.name}}</td>
+          <td style="padding: 25px 0;">{{product.description.length > 20 ? product.description.slice(0, 17) + '...' : product.description}}</td>
+          <td style="padding: 25px 0;">{{product.price}} kr.</td>
+          <td style="padding: 25px 0;">{{product.category.name}}</td>    
+          <td><button class="btn btn-danger mx-1 my-3" (click)="delete(product, $event)">Delete</button></td>
+        </tr>
+      </tbody>
+    </table>
 
-  </div>
+    <div style="display: flex; flex-direction: row;">
+      <div class="form-group card-body" style="text-align: center;">
+      </div>
+      <div style="margin: auto;">
+        <app-pagination [total-items]="productCount" [page-size]="query.pageSize"
+          (page-changed)="onPageChange($event)"></app-pagination>
+      </div>
+    </div>
 </div>
+
+
+

@@ -1,7 +1,11 @@
+using CompressedStaticFiles;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.FileProviders;
+using Microsoft.IdentityModel.Tokens;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
+using System.Text;
 using TheGeneralStore.Backend.Database;
 using TheGeneralStore.Backend.Database.Repositories;
 using TheGeneralStore.Backend.WebAPI.Persistence.Services;
@@ -14,14 +18,35 @@ namespace TheGeneralStore.Backend.WebAPI
         {
             var builder = WebApplication.CreateBuilder(args);
 
+            builder.Services.AddAuthentication(opt =>
+            {
+                opt.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                opt.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+            })
+             .AddJwtBearer(options =>
+            {
+                options.TokenValidationParameters = new TokenValidationParameters
+                {
+                    ValidateIssuer = true,
+                    ValidateAudience = true,
+                    ValidateLifetime = true,
+                    ValidateIssuerSigningKey = true,
+                    ValidIssuer = "https://localhost:7113",
+                    ValidAudience = "https://localhost:7113",
+                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("superSecretKey@345"))
+                };
+            });
+
+            //JWT Token service
+            builder.Services.AddTransient<TokenService>();
+
             // Adding CORS
             builder.Services.AddCors(options =>
             {
                 options.AddPolicy("AllowDevelopment", builder => builder.WithOrigins("http://localhost:4200").AllowAnyMethod().AllowAnyHeader().AllowCredentials());
             });
 
-            // Adding HttpContextAccessor
-            builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+            builder.Services.AddCompressedStaticFiles();
 
             //Adding Connection
             var connection = builder.Configuration.GetConnectionString("DefaultConnection");
@@ -38,6 +63,7 @@ namespace TheGeneralStore.Backend.WebAPI
             builder.Services.AddScoped<ProductRepository>();
             builder.Services.AddScoped<ImageRepository>();
             builder.Services.AddScoped<CategoryRepository>();
+            builder.Services.AddScoped<OrderRepository>();
 
             //Adding Services
             builder.Services.AddScoped<ImageService>();
@@ -70,12 +96,17 @@ namespace TheGeneralStore.Backend.WebAPI
                 });
             }
 
-            app.UseStaticFiles(new StaticFileOptions
+            app.UseCompressedStaticFiles(new StaticFileOptions
             {
                 FileProvider = new PhysicalFileProvider(
                 Path.Combine(app.Environment.ContentRootPath, "Uploads")),
-                RequestPath = "/Resources"
+                RequestPath = "/resources"
             });
+
+            app.UseHttpsRedirection();
+
+            app.UseAuthentication();
+            app.UseAuthorization();
 
             app.MapControllers();
 

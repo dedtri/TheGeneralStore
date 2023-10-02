@@ -1,1 +1,24 @@
-<p>image-list works!</p>
+<div class="container mt-5" style="display: flex; flex-direction: column; align-items: center;">
+    <h1>Image Gallery</h1>
+  
+    <div style="display: flex; flex-direction: row;">
+      <div class="form-group card-body" style="text-align: center;">
+      </div>
+      <div style="margin: auto;">
+        <app-pagination [total-items]="imageCount" [page-size]="query.pageSize"
+          (page-changed)="onPageChange($event)"></app-pagination>
+      </div>
+    </div>
+  
+    <div class="gallery" style="display: flex; flex-wrap: wrap;">
+      <div style="margin: 10px; justify-content: center; display: flex; flex-direction: column;" *ngFor="let image of queryResult">
+  
+        <img [src]="imageBaseUrl+image.imageId+image.fileExtension" alt="Image" width="150" height="150" style="margin: auto;"/>
+        <p style="font-weight: bold">Product Name: {{image.product.name}}</p>
+  
+        <div style="display: flex; flex-direction: row; justify-content: center;">
+          <a><button class="btn btn-danger mx-1 my-3" (click)="delete(image.id)">Delete</button></a>
+        </div>
+      </div>
+    </div>
+  </div>

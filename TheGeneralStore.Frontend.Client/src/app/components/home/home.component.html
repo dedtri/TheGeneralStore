@@ -1,4 +1,9 @@
-
+<nav *ngIf="categories.count > 0" class="navbar-light py-2" style="background-color: rgba(0, 0, 255, 0.25); border-bottom: 2px black solid;">
+    <a *ngFor="let category of categories.entities" class="navbar-brand mx-5" style="margin: auto;" routerLink="categories/{{category.name}}">{{category.name | uppercase}}</a>
+</nav>
+<nav *ngIf="serverError" class="navbar-light py-2 text-center" style="background-color: rgba(250, 4, 4, 0.25); border-bottom: 2px black solid;">
+    <p style="margin: auto;">SERVER ISSUES... PLEASE WAIT!!!</p>
+</nav>
 <div style="background-color: rgba(0, 0, 255, 0.2);">
 <div class="container d-flex justify-content-center flex-column text-center">
 

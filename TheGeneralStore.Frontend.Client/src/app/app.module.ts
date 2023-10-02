@@ -4,6 +4,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { MatDialogModule } from '@angular/material/dialog';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { JwtModule } from "@auth0/angular-jwt";
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -17,6 +18,21 @@ import { CategoryUpdateComponent } from './components/category/category-update/c
 import { ImageListComponent } from './components/image/image-list/image-list.component';
 import { ImageUploadComponent } from './components/image/image-upload/image-upload.component';
 import { ProductCreateDetailsComponent } from './components/product/product-create/product-create-details/product-create-details.component';
+import { PaginationComponent } from './components/shared/pagination/pagination.component';
+import { CartComponent } from './components/cart/cart.component';
+import { HomeComponent } from './components/home/home.component';
+import { CategoryProductListComponent } from './components/category/category-product-list/category-product-list.component';
+import { LoginComponent } from './components/login/login/login.component';
+import { AuthGuard } from './services/authguard.service';
+import { RegisterComponent } from './components/login/register/register.component';
+import { UserprofileComponent } from './components/login/userprofile/userprofile.component';
+import { CheckOutComponent } from './components/check-out/check-out.component';
+import { ThankyouComponent } from './components/thankyou/thankyou.component';
+import { MyorderComponent } from './components/order/myorder/myorder.component';
+
+export function tokenGetter() { 
+  return localStorage.getItem("jwt"); 
+}
 
 @NgModule({
   declarations: [
@@ -31,7 +47,17 @@ import { ProductCreateDetailsComponent } from './components/product/product-crea
     CategoryUpdateComponent,
     ImageListComponent,
     ImageUploadComponent,
-    ProductCreateDetailsComponent
+    ProductCreateDetailsComponent,
+    PaginationComponent,
+    CartComponent,
+    HomeComponent,
+    CategoryProductListComponent,
+    LoginComponent,
+    RegisterComponent,
+    UserprofileComponent,
+    CheckOutComponent,
+    ThankyouComponent,
+    MyorderComponent
   ],
   imports: [
     AppRoutingModule,
@@ -39,9 +65,16 @@ import { ProductCreateDetailsComponent } from './components/product/product-crea
     HttpClientModule,
     MatDialogModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    JwtModule.forRoot({
+      config: {
+        tokenGetter: tokenGetter,
+        allowedDomains: ["localhost:7113"],
+        disallowedRoutes: []
+      }
+    })
   ],
-  providers: [],
+  providers: [AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
